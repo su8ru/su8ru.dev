@@ -11,10 +11,12 @@ module.exports = {
   arrowParens: "always",
   importOrder: [
     "^next$",
+    "^next/(.*)$",
     "^next-(.*)$",
     "^react$",
     "^react-(.*)$",
     "<THIRD_PARTY_MODULES>",
+    "^@chakra-ui/(.*)$",
     "^pages/(.*)$",
     "^components/(.*)$",
     "^hooks/(.*)$",
