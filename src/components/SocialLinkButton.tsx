@@ -9,6 +9,7 @@ type Props = {
   icon: React.ReactElement;
   id: string;
   href: string;
+  size?: string;
 } & RequireOne<{
   color?: Token<CSS.Property.Color, "colors">;
   colorScheme?: ThemeTypings["colorSchemes"];
@@ -18,6 +19,7 @@ const SocialLinkButton: React.VFC<Props> = ({
   icon,
   id,
   href,
+  size = "sm",
   color,
   colorScheme,
 }) => {
@@ -27,7 +29,7 @@ const SocialLinkButton: React.VFC<Props> = ({
       color={color}
       colorScheme={colorScheme}
       variant="link"
-      size="sm"
+      size={size}
       leftIcon={icon}
       href={href}
       target="_blank"

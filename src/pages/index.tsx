@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import { BsEnvelopeFill } from "react-icons/bs";
 import { SiGithub, SiQiita, SiTwitter, SiZenn } from "react-icons/si";
 import dayjs from "dayjs";
 import {
@@ -81,6 +82,23 @@ const Home: NextPage<Props> = ({ articles }) => {
       <Heading as="h2" size="lg" mt={12}>
         Contact
       </Heading>
+      <VStack mt="6" alignItems="flex-start">
+        <SocialLinkButton
+          icon={<BsEnvelopeFill />}
+          id="contact@su8ru.dev"
+          href="mailto:contact@su8ru.dev"
+          color={githubColor}
+          size="md"
+        />
+        <SocialLinkButton
+          icon={<SiTwitter />}
+          id="@su8ru_"
+          href="https://twitter.com/su8ru_"
+          colorScheme="twitter"
+          size="md"
+        />
+      </VStack>
+
       <Box my={2}>
         <ToggleColorModeButton />
       </Box>
