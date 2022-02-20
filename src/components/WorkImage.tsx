@@ -10,7 +10,7 @@ export interface WorkImageProps {
 
 const WorkImage: React.VFC<WorkImageProps> = ({ src, alt }) => {
   const [showModal, setShowModal] = useBoolean(false);
-  const bgColor = useColorModeValue("gray.200", "gray.700");
+  const bgColor = useColorModeValue("gray.100", "whiteAlpha.200");
 
   useEffect(() => {
     const body = document.querySelector("body");
