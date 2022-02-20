@@ -4,14 +4,19 @@ import {
   Box,
   Container,
   Divider,
+  Flex,
   HStack,
   Heading,
   Image,
+  Stack,
+  Text,
   VStack,
+  Wrap,
   useColorModeValue,
 } from "@chakra-ui/react";
 import SocialLinkButton from "components/SocialLinkButton";
 import ToggleColorModeButton from "components/ToggleColorModeButton";
+import Work, { WorkProps } from "components/Work";
 
 const Home: NextPage = () => {
   const githubColor = useColorModeValue("#222", "#fff");
@@ -19,8 +24,8 @@ const Home: NextPage = () => {
   const qiitaColor = useColorModeValue("#55c500", "#bbe899");
 
   return (
-    <Container maxW="3xl">
-      <HStack spacing={12} my="8">
+    <Container maxW="3xl" pt="8">
+      <Wrap spacing={10} my="8" as="div" align="center">
         <Box w="32">
           <Image src="/avatar.png" alt="avatar" />
         </Box>
@@ -28,7 +33,7 @@ const Home: NextPage = () => {
           <Heading as="h1" size="xl">
             subaru
           </Heading>
-          <HStack mt={2} spacing={4}>
+          <Wrap mt={2} spacing={4} as="div">
             <SocialLinkButton
               icon={<SiGithub />}
               id="@su8ru"
@@ -53,12 +58,51 @@ const Home: NextPage = () => {
               href="https://qiita.com/su8ru"
               color={qiitaColor}
             />
-          </HStack>
+          </Wrap>
         </VStack>
-      </HStack>
+      </Wrap>
       <Divider />
-      <ToggleColorModeButton />
+      <Heading as="h2" size="lg" mt={8}>
+        Works
+      </Heading>
+      <Works />
+      <Box my={2}>
+        <ToggleColorModeButton />
+      </Box>
     </Container>
+  );
+};
+
+const Works: React.VFC = () => {
+  const works: ReadonlyArray<WorkProps> = [
+    {
+      title: "CAPPUCCINO System",
+      imageKey: "cappuccino",
+      github: "afes-website",
+    },
+    {
+      title: '73rd Afes Website & "Online" Exhibition',
+      imageKey: "73afes",
+      github: "afes-website",
+    },
+    {
+      title: "Frourio Official Document",
+      imageKey: "frourio",
+      github: "frouriojs/frourio.com",
+    },
+    {
+      title: "こすとれ - KO•S Train Location",
+      imageKey: "kostl",
+      github: "su8ru/kostl",
+    },
+  ] as const;
+
+  return (
+    <>
+      {works.map((workProps, i) => (
+        <Work {...workProps} key={i} />
+      ))}
+    </>
   );
 };
 
