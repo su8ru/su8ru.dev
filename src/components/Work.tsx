@@ -55,7 +55,7 @@ const Work: React.VFC<WorkProps> = ({
         )}
       </Flex>
       {description && <Text mt="2">{description}</Text>}
-      <HStack my="6">
+      <HStack my="6" spacing="4">
         <Box>
           <WorkImage src={`/works/${imageKey}-1.png`} alt={title} />
         </Box>

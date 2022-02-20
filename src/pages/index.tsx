@@ -69,12 +69,18 @@ const Home: NextPage<Props> = ({ articles }) => {
       <Heading as="h2" size="lg" mt={12}>
         Works
       </Heading>
-      <Works />
-      <Divider />
+      <Box mt="8">
+        <Works />
+      </Box>
       <Heading as="h2" size="lg" mt={12}>
         Articles
       </Heading>
-      <ArticleCards articles={articles} />
+      <Box mt="8">
+        <ArticleCards articles={articles} />
+      </Box>
+      <Heading as="h2" size="lg" mt={12}>
+        Contact
+      </Heading>
       <Box my={2}>
         <ToggleColorModeButton />
       </Box>

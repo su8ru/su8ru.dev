@@ -63,7 +63,7 @@ const ArticleCards: React.VFC<{
   const cardsPerRow = useBreakpointValue<number>({ base: 1, sm: 2 });
 
   return (
-    <Grid templateColumns={`repeat(${cardsPerRow}, 1fr)`} gap="2" mt="8">
+    <Grid templateColumns={`repeat(${cardsPerRow}, 1fr)`} gap="4">
       {articles.reverse().map((article) => (
         <ArticleCard article={article} key={article.link} />
       ))}
