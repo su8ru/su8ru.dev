@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { BsEnvelopeFill } from "react-icons/bs";
 import { SiGithub, SiQiita, SiTwitter, SiZenn } from "react-icons/si";
 import dayjs from "dayjs";
@@ -29,6 +30,9 @@ const Home: NextPage<Props> = ({ articles }) => {
 
   return (
     <Container maxW="3xl" pt="8" pb="12">
+      <Head>
+        <title>subaru</title>
+      </Head>
       <Wrap spacing={10} my="8" as="div" align="center">
         <Box w="32">
           <Image src="/avatar.png" alt="avatar" />
