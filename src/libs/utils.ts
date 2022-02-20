@@ -4,4 +4,4 @@ export const getHostnameFromUrl = (url: string): string => {
 };
 
 export const getFaviconSrcFromHostname = (hostname: string): string =>
-  `https://www.google.com/s2/favicons?domain=${hostname}`;
+  `https://www.google.com/s2/favicons?domain=${hostname}&sz=64`;
