@@ -6,21 +6,27 @@ import {
   Flex,
   HStack,
   Heading,
-  Image,
   Spacer,
+  Text,
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
+import WorkImage from "components/WorkImage";
 
 export interface WorkProps {
   title: string;
+  description?: string;
   imageKey: string;
   github?: string;
 }
 
-const Work: React.VFC<WorkProps> = ({ title, imageKey, github }) => {
+const Work: React.VFC<WorkProps> = ({
+  title,
+  description,
+  imageKey,
+  github,
+}) => {
   const githubColor = useColorModeValue("#222", "#fff");
-  const bgColor = useColorModeValue("gray.200", "gray.700");
   const showGitHubButton = useBreakpointValue<boolean>({
     base: false,
     sm: true,
@@ -48,28 +54,13 @@ const Work: React.VFC<WorkProps> = ({ title, imageKey, github }) => {
           </Button>
         )}
       </Flex>
+      {description && <Text mt="2">{description}</Text>}
       <HStack my="6">
         <Box>
-          <Image
-            src={`/works/${imageKey}-1.png`}
-            alt={title}
-            borderRadius="8"
-            bg={bgColor}
-            boxShadow="base"
-            htmlWidth="1500px"
-            htmlHeight="1000px"
-          />
+          <WorkImage src={`/works/${imageKey}-1.png`} alt={title} />
         </Box>
         <Box>
-          <Image
-            src={`/works/${imageKey}-2.png`}
-            alt={title}
-            borderRadius="8"
-            bg={bgColor}
-            boxShadow="base"
-            htmlWidth="1500px"
-            htmlHeight="1000px"
-          />
+          <WorkImage src={`/works/${imageKey}-2.png`} alt={title} />
         </Box>
       </HStack>
     </>

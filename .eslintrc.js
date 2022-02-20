@@ -14,7 +14,7 @@ module.exports = {
       rules: {
         "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/no-unused-vars": [
-          "warn",
+          "error",
           { ignoreRestSiblings: true },
         ],
         "react/jsx-no-useless-fragment": "warn",
