@@ -10,6 +10,7 @@ const ToggleColorModeButton: React.FC = () => {
       aria-label="Switch Color Theme"
       icon={colorMode === "light" ? <BsMoon /> : <BsSun />}
       onClick={toggleColorMode}
+      boxShadow="sm"
     />
   );
 };

@@ -1,12 +1,7 @@
 import type { AppProps } from "next/app";
 import { useEffect } from "react";
-import {
-  Box,
-  ChakraProvider,
-  Container,
-  Divider,
-  Text,
-} from "@chakra-ui/react";
+import { ChakraProvider, Container } from "@chakra-ui/react";
+import Footer from "components/Footer";
 import theme from "libs/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -24,16 +19,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider theme={theme}>
       <Container minW="100%" minH="calc(var(--100vh) - 59px)">
         <Component {...pageProps} />
+        <Footer />
       </Container>
-      <Divider />
-      <Box as="footer" p="2">
-        <Text color="gray.400" align="center" fontSize="sm">
-          Avatar by yukki____01.
-        </Text>
-        <Text color="gray.400" align="center" fontSize="sm">
-          © subaru 2022
-        </Text>
-      </Box>
     </ChakraProvider>
   );
 }

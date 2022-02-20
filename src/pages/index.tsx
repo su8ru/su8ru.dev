@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import ArticleCards from "components/ArticleCards";
 import SocialLinkButton from "components/SocialLinkButton";
-import ToggleColorModeButton from "components/ToggleColorModeButton";
 import Works from "components/Works";
 import { fetchFeedItems } from "libs/parser";
 import { Article } from "types/article";
@@ -29,7 +28,7 @@ const Home: NextPage<Props> = ({ articles }) => {
   const qiitaColor = useColorModeValue("#55c500", "#bbe899");
 
   return (
-    <Container maxW="3xl" pt="8">
+    <Container maxW="3xl" pt="8" pb="12">
       <Wrap spacing={10} my="8" as="div" align="center">
         <Box w="32">
           <Image src="/avatar.png" alt="avatar" />
@@ -98,10 +97,6 @@ const Home: NextPage<Props> = ({ articles }) => {
           size="md"
         />
       </VStack>
-
-      <Box my={2}>
-        <ToggleColorModeButton />
-      </Box>
     </Container>
   );
 };
