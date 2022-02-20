@@ -22,15 +22,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ChakraProvider theme={theme}>
-      <Container minW="100%" minH="calc(var(--100vh) - 73px)">
+      <Container minW="100%" minH="calc(var(--100vh) - 59px)">
         <Component {...pageProps} />
       </Container>
       <Divider />
-      <Box p="3">
-        <Text color="gray.400" align="center">
-          Avatar by yuki.
+      <Box as="footer" p="2">
+        <Text color="gray.400" align="center" fontSize="sm">
+          Avatar by yukki____01.
         </Text>
-        <Text color="gray.400" align="center">
+        <Text color="gray.400" align="center" fontSize="sm">
           © subaru 2022
         </Text>
       </Box>
