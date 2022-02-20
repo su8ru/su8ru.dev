@@ -8,7 +8,6 @@ import {
   Image,
   Spacer,
   Text,
-  useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { getFaviconSrcFromHostname, getHostnameFromUrl } from "libs/utils";
@@ -60,13 +59,14 @@ const ArticleCard: React.VFC<{
 const ArticleCards: React.VFC<{
   articles: Article[];
 }> = ({ articles }) => {
-  const cardsPerRow = useBreakpointValue<number>({ base: 1, sm: 2 });
-
   return (
-    <Grid templateColumns={`repeat(${cardsPerRow}, 1fr)`} gap="4">
-      {articles.reverse().map((article) => (
-        <ArticleCard article={article} key={article.link} />
-      ))}
+    <Grid templateColumns="repeat(2, 1fr)" gap="4">
+      {articles
+        .slice()
+        .reverse()
+        .map((article) => (
+          <ArticleCard article={article} key={article.link} />
+        ))}
     </Grid>
   );
 };
