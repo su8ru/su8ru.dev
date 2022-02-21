@@ -3,8 +3,9 @@ import { mode } from "@chakra-ui/theme-tools";
 import { StyleFunctionProps } from "@chakra-ui/theme-tools/src/component";
 import { Dict } from "@chakra-ui/utils";
 
-const config: ThemeConfig = {
+export const config: ThemeConfig = {
   useSystemColorMode: true,
+  initialColorMode: "system",
 };
 
 const _fontFamily =
