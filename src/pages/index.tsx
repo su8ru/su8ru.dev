@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import { BsEnvelopeFill } from "react-icons/bs";
-import { SiGithub, SiQiita, SiTwitter, SiZenn } from "react-icons/si";
+import { SiGithub, SiTwitter, SiZenn } from "react-icons/si";
 import dayjs from "dayjs";
 import {
   Box,
@@ -14,6 +14,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import ArticleCards from "components/ArticleCards";
+import QiitaIcon from "components/QiitaIcon";
 import SocialLinkButton from "components/SocialLinkButton";
 import Works from "components/Works";
 import { fetchFeedItems } from "libs/parser";
@@ -61,7 +62,7 @@ const Home: NextPage<Props> = ({ articles }) => {
               color={zennColor}
             />
             <SocialLinkButton
-              icon={<SiQiita />}
+              icon={<QiitaIcon />}
               id="@su8ru"
               href="https://qiita.com/su8ru"
               color={qiitaColor}
