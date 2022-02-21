@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
-import { ChakraProvider, Container, Flex, Slide } from "@chakra-ui/react";
+import { Box, ChakraProvider, Flex, Slide } from "@chakra-ui/react";
 import Footer from "components/Footer";
 import ScrollToTopButton from "components/ScrollToTopButton";
 import theme from "libs/theme";
@@ -32,15 +32,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ChakraProvider theme={theme}>
-      <Container minW="100%" minH="calc(var(--100vh) - 59px)">
-        <Component {...pageProps} />
+      <Flex minW="100%" minH="var(--100vh)" direction="column">
+        <Box as="main" flexGrow="1">
+          <Component {...pageProps} />
+        </Box>
         <Footer />
         <Slide in={!isTop} direction="bottom">
           <Flex m="2.5" direction="row-reverse">
             <ScrollToTopButton />
           </Flex>
         </Slide>
-      </Container>
+      </Flex>
     </ChakraProvider>
   );
 }
