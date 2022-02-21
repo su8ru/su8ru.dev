@@ -39,6 +39,8 @@ const ArticleCard: React.VFC<{
               alt={getHostnameFromUrl(link)}
               width="14px"
               height="14px"
+              htmlWidth="64px"
+              htmlHeight="64px"
               borderRadius="3px"
               mr="2"
             />

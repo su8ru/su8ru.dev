@@ -35,8 +35,13 @@ const Home: NextPage<Props> = ({ articles }) => {
         <title>subaru</title>
       </Head>
       <Wrap spacing={10} my="8" as="div" align="center">
-        <Box w="32">
-          <Image src="/avatar.png" alt="avatar" />
+        <Box w="32" h="32">
+          <Image
+            src="/avatar.png"
+            alt="avatar"
+            htmlWidth="700px"
+            htmlHeight="700px"
+          />
         </Box>
         <VStack spacing={4} align="left">
           <Heading as="h1" size="xl">
