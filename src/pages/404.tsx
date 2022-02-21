@@ -7,9 +7,12 @@ import {
   Container,
   Text,
   VStack,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 const Page: NextPage = () => {
+  const bgColor = useColorModeValue("#7d7c7a", "#fff");
+
   return (
     <Container maxW="3xl" pt="8" pb="12" h="100%">
       <VStack>
@@ -17,7 +20,7 @@ const Page: NextPage = () => {
           w="100%"
           maxW="80"
           ratio={1}
-          bgColor="#fff"
+          bgColor={bgColor}
           sx={{ maskImage: "url(/avatar-dotted.png)", maskSize: "contain" }}
         >
           <Box />
