@@ -16,16 +16,11 @@ import WorkImage from "components/WorkImage";
 export interface WorkProps {
   title: string;
   description?: string;
-  imageKey: string;
+  images: ReadonlyArray<string>;
   github?: string;
 }
 
-const Work: React.VFC<WorkProps> = ({
-  title,
-  description,
-  imageKey,
-  github,
-}) => {
+const Work: React.VFC<WorkProps> = ({ title, description, images, github }) => {
   const githubColor = useColorModeValue("#222", "#fff");
   const showGitHubButton = useBreakpointValue<boolean>({
     base: false,
@@ -56,12 +51,11 @@ const Work: React.VFC<WorkProps> = ({
       </Flex>
       {description && <Text mt="2">{description}</Text>}
       <HStack my="6" spacing="4">
-        <Box>
-          <WorkImage src={`/works/${imageKey}-1.png`} alt={title} />
-        </Box>
-        <Box>
-          <WorkImage src={`/works/${imageKey}-2.png`} alt={title} />
-        </Box>
+        {images.map((image) => (
+          <Box key={image}>
+            <WorkImage src={`/works/${image}`} alt={title} />
+          </Box>
+        ))}
       </HStack>
     </>
   );
