@@ -28,7 +28,7 @@ const ArticleCard: React.VFC<{
         height="100%"
       >
         <Box flex="1" px="4" pt="3">
-          <Heading as="h3" size="sm">
+          <Heading as="h3" size="sm" lineHeight="base">
             {title}
           </Heading>
         </Box>
