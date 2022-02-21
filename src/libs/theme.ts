@@ -7,6 +7,9 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
+const _fontFamily =
+  "Inter,'Helvetica Neue',Arial,'Hiragino Kaku Gothic ProN','Hiragino Sans',Meiryo,sans-serif";
+
 const theme = extendTheme({
   config,
   styles: {
@@ -16,7 +19,10 @@ const theme = extendTheme({
       },
     }),
   },
-  colors: {},
+  fonts: {
+    heading: _fontFamily,
+    body: _fontFamily,
+  },
 });
 
 export default theme;

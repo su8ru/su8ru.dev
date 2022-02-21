@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import { useEffect } from "react";
 import { ChakraProvider, Container } from "@chakra-ui/react";
 import Footer from "components/Footer";
@@ -17,6 +18,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ChakraProvider theme={theme}>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <Container minW="100%" minH="calc(var(--100vh) - 59px)">
         <Component {...pageProps} />
         <Footer />
