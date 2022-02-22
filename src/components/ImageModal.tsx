@@ -25,7 +25,7 @@ const ImageModal: React.FC<ImageModalProps> = ({ src, alt, onClose }) => {
         onClick={onClose}
       >
         <ScaleFade initialScale={0.8} in={true}>
-          <Image src={src} alt={alt} />
+          <Image src={src} alt={alt} maxH="var(--100vh)" />
         </ScaleFade>
       </Center>
     </ModalPortal>
