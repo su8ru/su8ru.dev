@@ -16,7 +16,7 @@ const ScrollToTopButton: React.VFC = () => {
       colorScheme="gray"
       _hover={{
         bgGradient:
-          "radial(farthest-corner at 10px -5px, #c3839d 10%, #5a7bd5 60%)",
+          "radial(circle farthest-corner at 20px 35px, #87b0c4 10%, #7d8fb8 40%, #8b7993 80%)",
         color: "whiteAlpha.900",
       }}
     />
