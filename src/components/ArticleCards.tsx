@@ -1,5 +1,6 @@
 import React from "react";
 import dayjs from "dayjs";
+import { useBoolean } from "@chakra-ui/hooks";
 import {
   Box,
   Flex,
@@ -16,6 +17,7 @@ import { Article } from "types/article";
 const ArticleCard: React.VFC<{
   article: Article;
 }> = ({ article: { title, link, isoDate } }) => {
+  const [hover, setHover] = useBoolean(false);
   const bgColor = useColorModeValue("gray.100", "whiteAlpha.200");
 
   return (
@@ -24,8 +26,11 @@ const ArticleCard: React.VFC<{
         direction="column"
         bgColor={bgColor}
         borderRadius="8"
-        boxShadow="base"
+        boxShadow={hover ? "md" : "base"}
+        transition="box-shadow .3s"
         height="100%"
+        onMouseEnter={setHover.on}
+        onMouseLeave={setHover.off}
       >
         <Box flex="1" px="4" pt="3">
           <Heading as="h3" size="sm" lineHeight="base">

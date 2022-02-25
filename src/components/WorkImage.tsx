@@ -10,6 +10,7 @@ export interface WorkImageProps {
 
 const WorkImage: React.VFC<WorkImageProps> = ({ src, alt }) => {
   const [showModal, setShowModal] = useBoolean(false);
+  const [hover, setHover] = useBoolean(false);
   const bgColor = useColorModeValue("gray.100", "whiteAlpha.200");
 
   useEffect(() => {
@@ -25,11 +26,14 @@ const WorkImage: React.VFC<WorkImageProps> = ({ src, alt }) => {
         alt={alt}
         borderRadius="8"
         bg={bgColor}
-        boxShadow="base"
+        boxShadow={hover ? "md" : "base"}
+        transition="box-shadow .3s"
         htmlWidth="1500px"
         htmlHeight="1000px"
         cursor="zoom-in"
         onClick={setShowModal.on}
+        onMouseEnter={setHover.on}
+        onMouseLeave={setHover.off}
       />
       {showModal && (
         <ImageModal src={src} alt={alt} onClose={setShowModal.off} />
