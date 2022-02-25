@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Head from "next/head";
 import NextLink from "next/link";
 import {
   AspectRatio,
@@ -15,6 +16,9 @@ const Page: NextPage = () => {
 
   return (
     <Container maxW="3xl" pt="8" pb="12" h="100%">
+      <Head>
+        <title>404 Not Found - subaru</title>
+      </Head>
       <VStack>
         <AspectRatio
           w="100%"

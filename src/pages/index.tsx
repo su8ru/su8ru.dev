@@ -33,6 +33,7 @@ const Home: NextPage<Props> = ({ articles }) => {
     <Container maxW="3xl" pt="8" pb="12">
       <Head>
         <title>subaru</title>
+        <meta name="description" content="Personal portfolio of subaru." />
       </Head>
       <Wrap spacing={10} my="8" as="div" align="center">
         <Box w="32" h="32">
