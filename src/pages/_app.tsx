@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
-import { Box, ChakraProvider, Flex, Slide } from "@chakra-ui/react";
+import { Box, ChakraProvider, Flex, SlideFade } from "@chakra-ui/react";
 import Footer from "components/Footer";
 import ScrollToTopButton from "components/ScrollToTopButton";
 import theme from "libs/theme";
@@ -37,11 +37,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </Box>
         <Footer />
-        <Slide in={!isTop} direction="bottom">
-          <Box m="2.5" position="fixed" right="0" bottom="0">
-            <ScrollToTopButton />
-          </Box>
-        </Slide>
+        <Box position="fixed" right="0" bottom="0">
+          <SlideFade in={!isTop}>
+            <Box pr="2.5" pb="2.5">
+              <ScrollToTopButton />
+            </Box>
+          </SlideFade>
+        </Box>
       </Flex>
     </ChakraProvider>
   );
