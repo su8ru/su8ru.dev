@@ -38,9 +38,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         </Box>
         <Footer />
         <Slide in={!isTop} direction="bottom">
-          <Flex m="2.5" direction="row-reverse">
+          <Box m="2.5" position="fixed" right="0" bottom="0">
             <ScrollToTopButton />
-          </Flex>
+          </Box>
         </Slide>
       </Flex>
     </ChakraProvider>
