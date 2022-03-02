@@ -20,7 +20,7 @@ const Works: React.VFC = () => {
     {
       title: "Frourio Official Document",
       description:
-        "フロントエンドとバックエンドを一緒に静的型検査する TypeScript フレームワーク「frourio」の公式ドキュメントを管理しています。（現在休止中）",
+        "フロントエンドとバックエンドを一緒に静的型検査する TypeScript フレームワーク「frourio」の公式ドキュメントを管理しています。",
       images: ["frourio-1.jpg", "frourio-2.jpg"],
       github: "frouriojs/frourio.com",
     },
