@@ -34,6 +34,7 @@ const Home: NextPage<Props> = ({ articles }) => {
       <Head>
         <title>subaru</title>
         <meta name="description" content="Personal portfolio of subaru." />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:url" content="https://su8ru.dev" />
         <meta property="og:title" content="subaru" />
         <meta property="og:site_name" content="subaru" />
