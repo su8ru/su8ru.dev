@@ -34,6 +34,15 @@ const Home: NextPage<Props> = ({ articles }) => {
       <Head>
         <title>subaru</title>
         <meta name="description" content="Personal portfolio of subaru." />
+        <meta property="og:url" content="https://su8ru.dev" />
+        <meta property="og:title" content="subaru" />
+        <meta property="og:site_name" content="subaru" />
+        <meta
+          property="og:description"
+          content="Personal portfolio of subaru."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://su8ru.dev/og-image.png" />
       </Head>
       <Wrap spacing={10} my="8" as="div" align="center">
         <Box w="32" h="32">
