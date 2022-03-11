@@ -18,6 +18,7 @@ module.exports = {
           { ignoreRestSiblings: true },
         ],
         "react/jsx-no-useless-fragment": "warn",
+        "@next/next/no-img-element": "off",
       },
     },
   ],

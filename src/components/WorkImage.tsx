@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useBoolean } from "@chakra-ui/hooks";
-import { Image, useColorModeValue } from "@chakra-ui/react";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import ImageModal from "components/ImageModal";
 
 export interface WorkImageProps {
-  src: string;
+  imageId: string;
   alt: string;
 }
 
-const WorkImage: React.VFC<WorkImageProps> = ({ src, alt }) => {
+const WorkImage: React.VFC<WorkImageProps> = ({ imageId, alt }) => {
   const [showModal, setShowModal] = useBoolean(false);
   const [hover, setHover] = useBoolean(false);
   const bgColor = useColorModeValue("gray.100", "whiteAlpha.200");
@@ -21,22 +21,34 @@ const WorkImage: React.VFC<WorkImageProps> = ({ src, alt }) => {
 
   return (
     <>
-      <Image
-        src={src}
-        alt={alt}
+      <Box
         borderRadius="8"
         bg={bgColor}
         boxShadow={hover ? "md" : "base"}
         transition="box-shadow .3s"
-        htmlWidth="1500px"
-        htmlHeight="1000px"
         cursor="zoom-in"
+        overflow="hidden"
         onClick={setShowModal.on}
         onMouseEnter={setHover.on}
         onMouseLeave={setHover.off}
-      />
+      >
+        <picture>
+          <source type="image/webp" srcSet={`/works/min/${imageId}.min.webp`} />
+          <source type="image/png" srcSet={`/works/min/${imageId}.min.png`} />
+          <img
+            src={`/works/min/${imageId}.min.png`}
+            alt={alt}
+            width="1500px"
+            height="1000px"
+          />
+        </picture>
+      </Box>
       {showModal && (
-        <ImageModal src={src} alt={alt} onClose={setShowModal.off} />
+        <ImageModal
+          src={`/works/${imageId}.png`}
+          alt={alt}
+          onClose={setShowModal.off}
+        />
       )}
     </>
   );
