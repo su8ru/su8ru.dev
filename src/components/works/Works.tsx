@@ -1,5 +1,5 @@
 import React from "react";
-import Work, { WorkProps } from "components/Work";
+import Work, { WorkProps } from "components/works/Work";
 
 const Works: React.VFC = () => {
   const works: ReadonlyArray<WorkProps> = [

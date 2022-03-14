@@ -11,8 +11,8 @@
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -s ./public -p 6006",
+    "build-storybook": "build-storybook -s ./public"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.3",

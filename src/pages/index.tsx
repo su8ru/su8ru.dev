@@ -12,10 +12,10 @@ import {
   Wrap,
   useColorModeValue,
 } from "@chakra-ui/react";
-import ArticleCards from "components/ArticleCards";
 import QiitaIcon from "components/QiitaIcon";
 import SocialLinkButton from "components/SocialLinkButton";
-import Works from "components/Works";
+import ArticleCards from "components/articles/ArticleCards";
+import Works from "components/works/Works";
 import { fetchFeedItems } from "libs/parser";
 import { Article } from "types/article";
 

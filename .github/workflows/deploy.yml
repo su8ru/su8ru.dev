@@ -5,13 +5,13 @@ on:
     inputs:
       ref:
         description: branch|tag|SHA to checkout
-        default: 'main'
+        default: "main"
         required: true
   push:
     branches:
       - main
   schedule:
-    - cron:  '0 6 * * *'
+    - cron: "0 6 * * *"
 
 jobs:
   deploy:
@@ -25,4 +25,4 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
-          vercel-args: '--prod'
+          vercel-args: "--prod"

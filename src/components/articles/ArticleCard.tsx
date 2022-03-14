@@ -4,7 +4,6 @@ import { useBoolean } from "@chakra-ui/hooks";
 import {
   Box,
   Flex,
-  Grid,
   Heading,
   Image,
   Spacer,
@@ -62,20 +61,4 @@ const ArticleCard: React.VFC<{
     </Box>
   );
 };
-
-const ArticleCards: React.VFC<{
-  articles: Article[];
-}> = ({ articles }) => {
-  return (
-    <Grid templateColumns="repeat(2, 1fr)" gap="4">
-      {articles
-        .slice()
-        .reverse()
-        .map((article) => (
-          <ArticleCard article={article} key={article.link} />
-        ))}
-    </Grid>
-  );
-};
-
-export default ArticleCards;
+export default ArticleCard;

@@ -11,7 +11,7 @@ import {
   useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
-import WorkImage from "components/WorkImage";
+import WorkImage from "components/works/WorkImage";
 
 export interface WorkProps {
   id: string;

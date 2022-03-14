@@ -1,8 +1,8 @@
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import { Box, ChakraProvider, Flex, SlideFade } from "@chakra-ui/react";
-import Footer from "components/Footer";
 import ScrollToTopButton from "components/ScrollToTopButton";
+import Footer from "components/footers/Footer";
 import theme from "libs/theme";
 
 function MyApp({ Component, pageProps }: AppProps) {

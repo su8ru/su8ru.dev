@@ -1,3 +1,4 @@
+import React from "react";
 import theme from "libs/theme";
 
 export const parameters = {
@@ -12,3 +13,11 @@ export const parameters = {
     theme,
   },
 };
+
+export const decorators = [
+  (Story) => (
+    <div style={{ maxWidth: "768px", margin: "auto" }}>
+      <Story />
+    </div>
+  ),
+];

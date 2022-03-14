@@ -7,8 +7,8 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import GitHubIconButton from "components/GitHubIconButton";
-import ToggleColorModeButton from "components/ToggleColorModeButton";
+import GitHubIconButton from "components/footers/GitHubIconButton";
+import ToggleColorModeButton from "components/footers/ToggleColorModeButton";
 
 const Footer: React.VFC = () => {
   const color = useColorModeValue("gray.500", "gray.400");

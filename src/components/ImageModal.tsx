@@ -8,7 +8,7 @@ export interface ImageModalProps {
   onClose: () => void;
 }
 
-const ImageModal: React.FC<ImageModalProps> = ({ src, alt, onClose }) => {
+const ImageModal: React.VFC<ImageModalProps> = ({ src, alt, onClose }) => {
   const backgroundColor = useColorModeValue("whiteAlpha.500", "blackAlpha.500");
 
   return (
