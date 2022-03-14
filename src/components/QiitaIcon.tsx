@@ -1,8 +1,11 @@
 import React from "react";
 import { Icon, IconProps } from "@chakra-ui/icon";
+import { MergeWithAs } from "@chakra-ui/react";
 
 // © 2022 Qiita Inc.
-const QiitaIcon: React.VFC<IconProps> = (props) => (
+const QiitaIcon: React.VFC<
+  MergeWithAs<React.ComponentProps<"svg">, IconProps>
+> = (props) => (
   <Icon viewBox="0 0 300 300" {...props}>
     <path
       fill="currentColor"
