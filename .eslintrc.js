@@ -3,6 +3,7 @@ module.exports = {
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "prettier",
+    "plugin:storybook/recommended",
   ],
   rules: {
     "react/prop-types": "off",
@@ -15,7 +16,9 @@ module.exports = {
         "@typescript-eslint/no-explicit-any": "error",
         "@typescript-eslint/no-unused-vars": [
           "error",
-          { ignoreRestSiblings: true },
+          {
+            ignoreRestSiblings: true,
+          },
         ],
         "react/jsx-no-useless-fragment": "warn",
         "@next/next/no-img-element": "off",
