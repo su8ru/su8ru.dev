@@ -124,7 +124,7 @@ const Home: NextPage<Props> = ({ articles }) => {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const [qiitaArticles, zennArticles] = await Promise.all([
-    fetchFeedItems("https://qiita.com/su8ru/feed"),
+    fetchFeedItems("https://qiita-feed.su8ru.workers.dev/su8ru"),
     fetchFeedItems("https://zenn.dev/su8ru/feed"),
   ]);
   const articles = [...qiitaArticles, ...zennArticles].sort(
